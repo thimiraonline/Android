@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <script type="text/javascript" src="{{"asset/js/ghost-finder.js"}}"></script>
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+
+</head>
+
+<body class="{{body_class}}">
+
+    <div class="site-wrapper">
+
+        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+
+        {{{body}}}
+
+        {{!-- The footer at the very bottom of the screen --}}
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <nav class="site-footer-nav">
+                    <a href="{{@site.url}}/about-us">ABOUT US</a>
+                    <a href="{{@site.url}}/contact-us">CONTACT US</a>
+                    <a href="{{@site.url}}/privacy-policy/">POLICIES</a>
+                    <a href="https://androidwedakarayo.com" target="_blank" rel="noopener">CONTRIBUTE</a>
+                </nav>
+
+                <div class="social-icons">
+                    <ul>
+                        <li>
+                            <a href="https://facebook.com/androidwedakarayo">
+                                <i class="fab fa-facebook-f fa-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/androidwdlka">
+                                <i class="fab fa-twitter fa-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/androidwedakarayo">
+                                <i class="fab fa-instagram fa-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCBYFBHWwOwXZlgRvwtmc1qw">
+                                <i class="fab fa-youtube fa-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://podcasts.apple.com/us/podcast/android-%e0%b7%80-%e0%b6%a9%e0%b6%9a-%e0%b6%bb%e0%b6%ba/id1512647468">
+                                <i class="fas fa-podcast fa-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://open.spotify.com/show/3mLVk0itdRn2yZ3FFFmyok">
+                                <i class="fab fa-spotify fa-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://androidwedakarayo.com/rss">
+                                <i class="fa fa-rss fa-xs"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <section class="copyright">
+                    Copyright &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a>. All rights
+                    reserved.
+                </section>
+                <section class="copyright">
+                    <p>Made with
+                        {{!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" style="width:16px;overflow:visible">
+                            <path class="pulsingheart"
+                                d="M24.85 10.126c2.018-4.783 6.628-8.125 11.99-8.125 7.223 0 12.425 6.179 13.079 13.543 0 0 .353 1.828-.424 5.119-1.058 4.482-3.545 8.464-6.898 11.503L24.85 48 7.402 32.165c-3.353-3.038-5.84-7.021-6.898-11.503-.777-3.291-.424-5.119-.424-5.119C.734 8.179 5.936 2 13.159 2c5.363 0 9.673 3.343 11.691 8.126z"
+                                fill="#a83f39"></path>
+                        </svg> --}}
+                        <svg width="30" height="30" viewBox="0 0 200 200">
+                            <g transform="translate(100 100)">
+                                <path transform="translate(-50 -50)" fill="#a83f39"
+                                    d="M92.71,7.27L92.71,7.27c-9.71-9.69-25.46-9.69-35.18,0L50,14.79l-7.54-7.52C32.75-2.42,17-2.42,7.29,7.27v0 c-9.71,9.69-9.71,25.41,0,35.1L50,85l42.71-42.63C102.43,32.68,102.43,16.96,92.71,7.27z">
+                                </path>
+                                <animateTransform attributeName="transform" type="scale"
+                                    values="1; 1.5; 1.25; 1.5; 1.5; 1;" dur="1s" repeatCount="indefinite"
+                                    additive="sum">
+                                </animateTransform>
+                            </g>
+                        </svg>
+                        by Gavnyx
+                    </p>
+                </section>
+            </div>
+        </footer>
+
+    </div>
+
+    {{!-- The big email subscribe modal content --}}
+    {{#if @labs.members}}
+    <div class="subscribe-success-message">
+        <a class="subscribe-close" href="javascript:;"></a>
+        You've successfully subscribed to {{@site.title}}!
+    </div>
+
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-close-overlay" href="#"></a>
+        <a class="subscribe-close-button" href="#"></a>
+        <div class="subscribe-overlay-content">
+            {{#if @site.logo}}
+            <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+            {{/if}}
+            <div class="subscribe-form">
+                <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered
+                    straight to your inbox</p>
+                <form data-members-form="subscribe">
+                    <div class="form-group">
+                        <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
+                            autocomplete="false" />
+                        <button class="button primary" type="submit">
+                            <span class="button-content">Subscribe</span>
+                            <span class="button-loader">{{> "icons/loader"}}</span>
+                        </button>
+                    </div>
+                    <div class="message-success">
+                        <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+                    </div>
+                    <div class="message-error">
+                        Please enter a valid email address!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+
+    {{!-- jQuery, required for fitvids --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+    {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
+    <script src="{{asset "built/casper.js"}}"></script>
+    <script src="{{asset "js/embla.js"}}"></script>
+
+    {{!-- Scripts for Members subscription --}}
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+
+        $(document).ready(function () {
+            if (action == 'subscribe') {
+                $('body').addClass("subscribe-success");
+            }
+
+            $('.subscribe-success-message .subscribe-close').click(function () {
+                $('.subscribe-success-message').addClass('close');
+            });
+
+            // Reset form on opening subscrion overlay
+            $('.subscribe-button').click(function () {
+                $('.subscribe-overlay form').removeClass();
+                $('.subscribe-email').val('');
+            });
+        });
+    </script>
+
+    <script>$(document).ready(function () { var nav = document.querySelector('.site-nav-main .site-nav'); var feed = document.querySelector('.posts'); var lastScrollY = window.scrollY; var lastWindowHeight = window.innerHeight; var lastDocumentHeight = $(document).height(); var ticking = false; function onScroll() { lastScrollY = window.scrollY; requestTick(); } function onResize() { lastWindowHeight = window.innerHeight; lastDocumentHeight = $(document).height(); requestTick(); } function requestTick() { if (!ticking) { requestAnimationFrame(update); } ticking = true; } function update() { var trigger = feed.getBoundingClientRect().top + window.scrollY; var progressMax = lastDocumentHeight - lastWindowHeight; if (lastScrollY >= trigger - 20) { nav.classList.add('fixed-nav-active'); } else { nav.classList.remove('fixed-nav-active'); } ticking = false; } window.addEventListener('scroll', onScroll, { passive: true }); window.addEventListener('resize', onResize, false); update(); const setupPrevNextBtns = (prevBtn, nextBtn, embla) => { prevBtn.addEventListener("click", embla.scrollPrev, false); nextBtn.addEventListener("click", embla.scrollNext, false); }; const disablePrevNextBtns = (prevBtn, nextBtn, embla) => { return () => { if (embla.canScrollPrev()) prevBtn.removeAttribute("disabled"); else prevBtn.setAttribute("disabled", "disabled"); if (embla.canScrollNext()) nextBtn.removeAttribute("disabled"); else nextBtn.setAttribute("disabled", "disabled"); }; }; const setupDotBtns = (dotsArray, embla) => { dotsArray.forEach((dotNode, i) => { dotNode.classList.add('embla__dot'); dotNode.addEventListener('click', () => embla.scrollTo(i), false); }); }; const generateDotBtns = (dots, embla) => { const scrollSnaps = embla.scrollSnapList(); const dotsFrag = document.createDocumentFragment(); const dotsArray = scrollSnaps.map(() => document.createElement('button')); dotsArray.forEach(dotNode => dotsFrag.appendChild(dotNode)); dots.appendChild(dotsFrag); return dotsArray; }; const selectDotBtn = (dotsArray, embla) => () => { const previous = embla.previousScrollSnap(); const selected = embla.selectedScrollSnap(); dotsArray[previous].classList.remove('is-selected'); dotsArray[selected].classList.add('is-selected'); }; const wrap = document.querySelector(".embla"); const viewPort = wrap.querySelector(".embla__viewport"); const prevBtn = wrap.querySelector(".embla__button--prev"); const nextBtn = wrap.querySelector(".embla__button--next"); const dots = wrap.querySelector(".embla__dots"); const radioButtons = document.querySelectorAll(".radio__input"); const radioButtonsArray = [].slice.call(radioButtons); const embla = EmblaCarousel(viewPort, { loop: true }); const dotsArray = generateDotBtns(dots, embla); const setSelectedDotBtn = selectDotBtn(dotsArray, embla); const disablePrevAndNextBtns = disablePrevNextBtns(prevBtn, nextBtn, embla); setupPrevNextBtns(prevBtn, nextBtn, embla); setupDotBtns(dotsArray, embla); embla.on("select", setSelectedDotBtn); embla.on("select", disablePrevAndNextBtns); embla.on("init", setSelectedDotBtn); embla.on("init", disablePrevAndNextBtns); });</script>
+
+    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+    {{{block "scripts"}}}
+
+    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+    {{ghost_foot}}
+
+</body>
+
+</html>
