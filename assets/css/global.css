@@ -142,11 +142,13 @@ html {
     box-sizing: inherit;
 }
 a {
+    text-decoration: none;
     background-color: transparent;
 }
 a:active,
 a:hover {
-    outline: 0;
+    text-decoration: none;
+    
 }
 b,
 strong {
@@ -290,7 +292,6 @@ body {
     letter-spacing: 0;
     text-rendering: optimizeLegibility;
     background: #fff;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings: "liga" on;
@@ -416,12 +417,13 @@ blockquote cite a {
 }
 
 a {
-    color: color(var(--blue) l(-5%));
+    background-color: transparent;
     text-decoration: none;
 }
 
+a:active,
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 h1,

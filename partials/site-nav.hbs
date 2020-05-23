@@ -1,40 +1,30 @@
-<nav class="site-nav">
-    <div class="site-nav-left-wrapper">
-        <div class="site-nav-left">
-            {{#if @site.logo}}
-                <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
-            {{else}}
-                <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
-            {{/if}}
-            <div class="site-nav-content">
-                {{#if @site.navigation}}
-                    {{navigation}}
-                {{/if}}
-                {{#is "post"}}
-                    <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
-                {{/is}}
-            </div>
+<div style="padding-bottom: 20px;"></div>
+<div class="outer-search category-container">
+    <div class="inner">
+        <div class="category-holder">
+            <ul class="nav category-nav pull-left">
+                <li class="nav-tag"><a href="/tag/technology/" title="Technology">Technology</a></li>
+                <li class="nav-tag"><a href="/tag/mobile/" title="Mobile">Mobile</a></li>
+                <li class="nav-tag"><a href="/tag/google/" title="Google">Google</a></li>
+                <li class="nav-tag"><a href="/tag/apps-tag/" title="Apps">Apps</a></li>
+                <li class="nav-tag"><a href="/tag/security/" title="Security">Security</a></li>
+                <li class="nav-tag"><a href="/tag/social-media/" title="Social Media">Social Media</a></li>
+                <li>
+                    <a href="/category-collection">
+                        <span style="margin-left:0.5rem;">More...</span>
+                    </a>
+                </li>
+            </ul>
+            <a class="search-btn no-decoration pull-right" href="#ghosteasybar">
+                <span style="color: white;">
+                <i class="fas fa-search"></i> 
+                </span>
+                </a>
+            <a class="category-search no-decoration category-xs" href="/category-collection">
+                <span style="margin-left:0.5rem;">Categories</span>
+            </a>
         </div>
     </div>
-    <div class="site-nav-right">
-        {{#if @site.secondary_navigation}}
-            {{navigation type="secondary"}}
-        {{else}}
-            <div class="social-links">
-                {{#if @site.facebook}}
-                    <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                {{/if}}
-                {{#if @site.twitter}}
-                    <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                {{/if}}
-            </div>
-            {{#unless @labs.members}}
-                <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
-            {{/unless}}
-        {{/if}}
+</div>
 
-        {{#if @labs.members}}
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
-        {{/if}}
-    </div>
-</nav>
+

@@ -14,7 +14,7 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gmfmi/ghost-easybar@0.1.6/dist/backpack/ghost-easybar-backpack.css">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/search-easybar.css"}}" />
     <style>
         .search-icon svg {
             width: 14px;
@@ -41,84 +41,93 @@
         {{{body}}}
 
         {{!-- The footer at the very bottom of the screen --}}
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <nav class="site-footer-nav">
-                    <a href="{{@site.url}}/about-us">ABOUT US</a>
-                    <a href="{{@site.url}}/contact-us">CONTACT US</a>
-                    <a href="{{@site.url}}/privacy-policy/">POLICIES</a>
-                    <a href="https://androidwedakarayo.com" target="_blank" rel="noopener">CONTRIBUTE</a>
-                </nav>
 
-                <div class="social-icons">
-                    <ul>
-                        <li>
-                            <a href="https://facebook.com/androidwedakarayo">
-                                <i class="fab fa-facebook-f fa-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/androidwdlka">
-                                <i class="fab fa-twitter fa-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://instagram.com/androidwedakarayo">
-                                <i class="fab fa-instagram fa-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/channel/UCBYFBHWwOwXZlgRvwtmc1qw">
-                                <i class="fab fa-youtube fa-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://podcasts.apple.com/us/podcast/android-%e0%b7%80-%e0%b6%a9%e0%b6%9a-%e0%b6%bb%e0%b6%ba/id1512647468">
-                                <i class="fas fa-podcast fa-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://open.spotify.com/show/3mLVk0itdRn2yZ3FFFmyok">
-                                <i class="fab fa-spotify fa-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://androidwedakarayo.com/rss">
-                                <i class="fa fa-rss fa-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <section class="copyright">
-                    Copyright &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a>. All rights
-                    reserved.
-                </section>
-                <section class="copyright">
-                    <p>Made with
-                        {{!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" style="width:16px;overflow:visible">
-                            <path class="pulsingheart"
-                                d="M24.85 10.126c2.018-4.783 6.628-8.125 11.99-8.125 7.223 0 12.425 6.179 13.079 13.543 0 0 .353 1.828-.424 5.119-1.058 4.482-3.545 8.464-6.898 11.503L24.85 48 7.402 32.165c-3.353-3.038-5.84-7.021-6.898-11.503-.777-3.291-.424-5.119-.424-5.119C.734 8.179 5.936 2 13.159 2c5.363 0 9.673 3.343 11.691 8.126z"
-                                fill="#a83f39"></path>
-                        </svg> --}}
-                        <svg width="30" height="30" viewBox="0 0 200 200">
-                            <g transform="translate(100 100)">
-                                <path transform="translate(-50 -50)" fill="#a83f39"
-                                    d="M92.71,7.27L92.71,7.27c-9.71-9.69-25.46-9.69-35.18,0L50,14.79l-7.54-7.52C32.75-2.42,17-2.42,7.29,7.27v0 c-9.71,9.69-9.71,25.41,0,35.1L50,85l42.71-42.63C102.43,32.68,102.43,16.96,92.71,7.27z">
-                                </path>
-                                <animateTransform attributeName="transform" type="scale"
-                                    values="1; 1.5; 1.25; 1.5; 1.5; 1;" dur="1s" repeatCount="indefinite"
-                                    additive="sum">
-                                </animateTransform>
-                            </g>
-                        </svg>
-                        by Gavnyx
-                    </p>
-                </section>
-            </div>
-        </footer>
 
     </div>
+
+
+    <div class="sc-iRbamj iijtug" id="appFooter">
+        <div class="container">
+            <div class="leftSection">
+                <div><img src="/assets/images/logo.svg" height="40" alt=""></div>
+                <p>Android වැඩකාරයෝ is to bring the latest tech news in the Sinhala language, and respects user
+                    contributions by letting anyone to contribute and update latest news.</p>
+                <div class="socialLinks"><a href="https://www.facebook.com/androidwedakarayo/" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="#3b5998" fill-rule="nonzero"
+                                d="M12 0c6.627 0 12 5.373 12 12 0 5.993-4.394 10.96-10.136 11.856v.02a12.225 12.225 0 0 1-1.701.124H12c.634 0 1.257-.05 1.864-.144v-8.82h3.15l.494-3.206h-3.645v-1.752c0-1.332.434-2.513 1.678-2.513h1.997V4.767c-.35-.048-1.093-.152-2.496-.152-2.929 0-4.646 1.55-4.646 5.082v2.133H7.385v3.207h3.01v8.812c.58.087 1.167.147 1.768.15L12 24C5.373 24 0 18.627 0 12S5.373 0 12 0z">
+                            </path>
+                        </svg></a><a href="https://twitter.com/androidwdlka" target="_blank"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 25 20">
+                            <path fill="#00acee" fill-rule="nonzero"
+                                d="M25 2.365a9.96 9.96 0 0 1-2.87.801A5.071 5.071 0 0 0 24.327.368a9.896 9.896 0 0 1-3.17 1.224A4.937 4.937 0 0 0 17.516 0c-2.756 0-4.99 2.26-4.99 5.048 0 .395.045.779.13 1.152C8.509 5.988 4.83 3.975 2.37.921a5.065 5.065 0 0 0-.675 2.542c0 1.753.879 3.296 2.22 4.205a5.003 5.003 0 0 1-2.264-.63v.059c0 2.449 1.721 4.488 4.002 4.952a4.87 4.87 0 0 1-1.311.181c-.322 0-.637-.037-.94-.093.634 2.002 2.477 3.464 4.66 3.508a9.955 9.955 0 0 1-7.388 2.09A14.052 14.052 0 0 0 8.325 20c9.18 0 14.2-7.694 14.2-14.368 0-.219-.006-.437-.016-.652A9.931 9.931 0 0 0 25 2.365">
+                            </path>
+                        </svg></a><a href="https://www.instagram.com/androidwedakarayo/" target="_blank"><img
+                            src="/assets/images/insta.svg " width="26" height="26"></a><a
+                        href="https://www.youtube.com/channel/UCBYFBHWwOwXZlgRvwtmc1qw" target="_blank"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="27" height="20" viewBox="0 0 27 20">
+                            <path fill="#c4302b" fill-rule="nonzero"
+                                d="M13.333 0c4.134 0 7.734.4 10 .733 1.4.2 2.534 1.267 2.8 2.667.267 1.533.6 3.8.6 6.6-.066 2.8-.333 5.067-.6 6.6a3.329 3.329 0 0 1-2.8 2.667c-2.2.333-5.866.733-10 .733-4.066 0-7.733-.4-10-.733a3.329 3.329 0 0 1-2.8-2.667C.267 15.067 0 12.8 0 10s.267-5.067.533-6.6a3.329 3.329 0 0 1 2.8-2.667C5.533.4 9.2 0 13.333 0zm-2.666 5.333v9.334l8-4.667-8-4.667z">
+                            </path>
+                        </svg></a>
+                    <a href="https://podcasts.apple.com/us/podcast/android-%e0%b7%80-%e0%b6%a9%e0%b6%9a-%e0%b6%bb%e0%b6%ba/id1512647468"
+                        style="color: #872EC4;">
+                        <i class="fas fa-podcast fa-lg"></i>
+                    </a>
+                    <a href="https://open.spotify.com/show/3mLVk0itdRn2yZ3FFFmyok" style="color: #1DB954;">
+                        <i class="fab fa-spotify fa-lg"></i>
+                    </a>
+                    <a href="https://androidwedakarayo.com/rss" target="_blank"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                            <path fill="#ee802f" fill-rule="nonzero"
+                                d="M0 0h1.667C11.775 0 20 8.225 20 18.333V20h-3.333v-1.667c0-8.271-6.729-15-15-15H0V0zm0 6.667h1.667c6.431 0 11.666 5.235 11.666 11.666V20H10v-1.667C10 13.738 6.262 10 1.667 10H0V6.667zM2.5 15a2.5 2.5 0 0 1 0 5 2.5 2.5 0 0 1 0-5z">
+                            </path>
+                        </svg></a>
+                </div>
+                <div class="copyright">
+                    <p>Copyright © 2020 Android වැඩකාරයෝ - A Gavnyx Media Company. All Rights Reserved.
+                    </p>
+                    <a href="//www.dmca.com/Protection/Status.aspx?ID=63e61e66-6871-4473-9b20-f76237385cf4" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-01.png?ID=63e61e66-6871-4473-9b20-f76237385cf4"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+                </div>
+            </div>
+            <div class="rightSection">
+                <div class="links">
+                    <div class="linkSection">
+                        <div><a target="blank" href="/about-us/">About Us</a></div>
+                        <div><a target="blank" href="mailto:contact@androidwedakarayo.com">Contact Us</a></div>
+                        <div><a target="blank" href="/writers/">Meet the team</a></div>
+                        <div><a target="blank" href="/categories/">Categories</a></div>
+                    </div>
+                    <div class="linkSection">
+                        <div><a href="/advertising/">Advertising</a></div>
+                        <div><a target="blank" href="/podcast/">Podcast</a></div>
+                        <div><a target="blank" href="/privacy-policy/">Privacy Policy</a></div>
+                        <div><a target="blank" href="/terms/">Terms</a></div>
+                    </div>
+                </div>
+                <div class="contact">
+                    <h5>Email us for general inquiries and copyright information</h5><a
+                        href="mailto:contact@androidwedakarayo.com" target="_top">contact@androidwedakarayo.com</a>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     {{!-- The big email subscribe modal content --}}
     {{#if @labs.members}}
@@ -202,35 +211,39 @@
 
     <script>$(document).ready(function () { var nav = document.querySelector('.site-nav-main .site-nav'); var feed = document.querySelector('.posts'); var lastScrollY = window.scrollY; var lastWindowHeight = window.innerHeight; var lastDocumentHeight = $(document).height(); var ticking = false; function onScroll() { lastScrollY = window.scrollY; requestTick(); } function onResize() { lastWindowHeight = window.innerHeight; lastDocumentHeight = $(document).height(); requestTick(); } function requestTick() { if (!ticking) { requestAnimationFrame(update); } ticking = true; } function update() { var trigger = feed.getBoundingClientRect().top + window.scrollY; var progressMax = lastDocumentHeight - lastWindowHeight; if (lastScrollY >= trigger - 20) { nav.classList.add('fixed-nav-active'); } else { nav.classList.remove('fixed-nav-active'); } ticking = false; } window.addEventListener('scroll', onScroll, { passive: true }); window.addEventListener('resize', onResize, false); update(); const setupPrevNextBtns = (prevBtn, nextBtn, embla) => { prevBtn.addEventListener("click", embla.scrollPrev, false); nextBtn.addEventListener("click", embla.scrollNext, false); }; const disablePrevNextBtns = (prevBtn, nextBtn, embla) => { return () => { if (embla.canScrollPrev()) prevBtn.removeAttribute("disabled"); else prevBtn.setAttribute("disabled", "disabled"); if (embla.canScrollNext()) nextBtn.removeAttribute("disabled"); else nextBtn.setAttribute("disabled", "disabled"); }; }; const setupDotBtns = (dotsArray, embla) => { dotsArray.forEach((dotNode, i) => { dotNode.classList.add('embla__dot'); dotNode.addEventListener('click', () => embla.scrollTo(i), false); }); }; const generateDotBtns = (dots, embla) => { const scrollSnaps = embla.scrollSnapList(); const dotsFrag = document.createDocumentFragment(); const dotsArray = scrollSnaps.map(() => document.createElement('button')); dotsArray.forEach(dotNode => dotsFrag.appendChild(dotNode)); dots.appendChild(dotsFrag); return dotsArray; }; const selectDotBtn = (dotsArray, embla) => () => { const previous = embla.previousScrollSnap(); const selected = embla.selectedScrollSnap(); dotsArray[previous].classList.remove('is-selected'); dotsArray[selected].classList.add('is-selected'); }; const wrap = document.querySelector(".embla"); const viewPort = wrap.querySelector(".embla__viewport"); const prevBtn = wrap.querySelector(".embla__button--prev"); const nextBtn = wrap.querySelector(".embla__button--next"); const dots = wrap.querySelector(".embla__dots"); const radioButtons = document.querySelectorAll(".radio__input"); const radioButtonsArray = [].slice.call(radioButtons); const embla = EmblaCarousel(viewPort, { loop: true }); const dotsArray = generateDotBtns(dots, embla); const setSelectedDotBtn = selectDotBtn(dotsArray, embla); const disablePrevAndNextBtns = disablePrevNextBtns(prevBtn, nextBtn, embla); setupPrevNextBtns(prevBtn, nextBtn, embla); setupDotBtns(dotsArray, embla); embla.on("select", setSelectedDotBtn); embla.on("select", disablePrevAndNextBtns); embla.on("init", setSelectedDotBtn); embla.on("init", disablePrevAndNextBtns); });</script>
 
-    <script src="https://cdn.jsdelivr.net/npm/searchinghost@1.2.0/dist/searchinghost.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/gmfmi/ghost-easybar@0.1.6/dist/backpack/ghost-easybar-backpack.js"></script>
-    <script>
-        new GhostEasyBar({
-            contentApiKey: '<CONTENT_API_KEY>',
-            searchEngine: 'searchinghost',
-            engineOptions: {
-                template: function(post) {
-                    var o = `<a href="${post.url}">`
-                    if (post.feature_image) o += `<img src="${post.feature_image}">`
-                    o += '<section>'
-                    if (post.tags.length > 0) {
-                        o += `<header>
-                                <span class="head-tags">${post.tags[0].name}</span>
-                                <span class="head-date">${post.published_at}</span>
-                            </header>`
-                    } else {
-                        o += `<header>
-                                <span class="head-tags">UNKNOWN</span>
-                                <span class="head-date">${post.published_at}</span>
-                            </header>`
-                    }
-                    o += `<h2>${post.title}</h2>`
-                    o += `</section></a>`
-                    return o;
+    <script src="https://cdn.jsdelivr.net/npm/searchinghost@1.3.0/dist/searchinghost.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/gmfmi/ghost-easybar@0.1.6/dist/backpack/ghost-easybar-backpack.js"></script>
+<script>
+    new GhostEasyBar({
+        contentApiKey: 'fdaf9fe0b5f7ca25d9a57d44b9',
+        searchEngine: 'searchinghost',
+        engineOptions: {
+            template: function (post) {
+                var o = `<a href="${post.url}">`
+                if (post.feature_image) o += `<img src="https://res.cloudinary.com/androidwedakarayo/image/fetch/w_281,h_160,c_fit,f_auto/${post.feature_image}?tr=h-160,w-281">`
+                o += '<section>'
+                if (post.tags.length > 0) {
+                    o += `<header>
+                            <span class="head-tags">${post.tags[0].name}</span>
+                            <span class="head-date">${post.published_at}</span>
+                        </header>`
+                } else {
+                    o += `<header>
+                            <span class="head-tags">UNKNOWN</span>
+                            <span class="head-date">${post.published_at}</span>
+                        </header>`
                 }
+                o += `<h2>${post.title}</h2>`
+                o += `</section></a>`
+                return o;
+            },
+            indexOptions: {
+                encode: false,
+                split: /\s+/
             }
-        });
-    </script>
+        }
+    });
+</script>
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
     {{{block "scripts"}}}

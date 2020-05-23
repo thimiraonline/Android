@@ -33,6 +33,11 @@ production stylesheet in assets/built/screen.css
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css";
 body {
     background: #fff;
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, strong, ul, li, a, div {
+    font-family: 'Open Sans', sans-serif!important;
 }
 
 .img {
@@ -94,7 +99,7 @@ body {
 
 @media (min-width: 900px) {
     .home-template .post-feed, .tag-template .post-feed, .author-template .post-feed {
-        padding: 40px 25px 5vw;
+        padding: 25px 25px 5vw;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
     }
@@ -106,12 +111,36 @@ body {
 /* 4. Site Header
 /* ---------------------------------------------------------- */
 
+.site-header {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: #333;
+    background: #15171a no-repeat 50%;
+    background-size: cover;
+    border-bottom: 1px solid rgba(172, 179, 194, .2);
+    box-shadow: 0 0.05rem 0.2rem rgba(69, 77, 93, .3);
+}
+
+.sections-holder {
+    background: #fafafa;
+    color: white;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    border-radius: 2rem;
+}
+
+.border-primary-top {
+    border-top: .2rem solid color(var(--darkgrey))
+}
+
 .site-header-background {
     position: relative;
-    margin-top: 64px;
+    margin-top: 0px;
     padding-bottom: 12px;
     color: #fff;
-    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
+    background: url(../images/site-header.jpg) no-repeat 0 0;
     background-size: cover;
 }
 
@@ -176,6 +205,7 @@ body {
     line-height: 1.4em;
     font-weight: 400;
     opacity: 0.8;
+    text-align: center;
 }
 
 /* 4.1 Home header
@@ -281,7 +311,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     overflow: hidden;
-    height: 64px;
+    height: 68px;
     font-size: 1.3rem;
 }
 
@@ -313,12 +343,13 @@ body {
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     margin-right: 10px;
-    padding: 10px 0 80px;
+    padding: 0px 0 0px;
     font-weight: 500;
     letter-spacing: 0.2px;
     text-transform: uppercase;
     white-space: nowrap;
     -ms-overflow-scrolling: touch;
+    background-color: transparent;
 }
 
 .site-nav-left .nav li:last-of-type {
@@ -334,12 +365,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 */
 
 .site-nav-logo {
-    position: relative;
+    position: center;
     z-index: 100;
     flex-shrink: 0;
     display: inline-block;
-    margin-right: 32px;
-    padding: 12px 0;
+    margin-right: 0px;
+    padding: 8px;
     color: #fff;
     font-size: 1.7rem;
     line-height: 1.8rem;
@@ -355,7 +386,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-logo img {
     display: block;
     width: auto;
-    height: 21px;
+    height: 50px;
 }
 
 .site-home-header .site-nav-logo {
@@ -386,7 +417,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .nav li a {
     position: relative;
     display: block;
-    padding: 12px 12px;
+    padding: 0px 12px;
     color: #fff;
     opacity: 0.8;
     transition: opacity 0.35s ease-in-out;
@@ -394,10 +425,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .nav li a:hover {
     text-decoration: none;
-    opacity: 1;
+    opacity: 1.0;
 }
 
 .nav li a:before {
+    display: none;
     content: "";
     position: absolute;
     right: 100%;
@@ -573,7 +605,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
     .site-nav-left {
         margin-right: 0;
-        padding-left: 5vw;
+        padding-left: 0vw;
     }
     .site-nav-right {
         display: none;
@@ -612,6 +644,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     transition: all .5s ease;
 }
 
+.post-card:hover {
+    box-shadow: 8px 28px 50px rgba(39, 44, 49, .07), 1px 6px 12px rgba(39, 44, 49, .04);
+}
+
 .post-card-image-link {
     position: relative;
     display: block;
@@ -623,6 +659,17 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 200px;
     background: var(--lightgrey) no-repeat center center;
     object-fit: cover;
+}
+
+.post-card-content {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 .post-card-content-link {
@@ -651,7 +698,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-primary-tag {
     margin: 0 15px 0.2em;
-    color: var(--darkgrey);
+    color: #738a94;
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.2px;
@@ -677,7 +724,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .post-card-excerpt {
     max-width: 56em;
     color: var(--midgrey);
-    font-family: Georgia, serif;
     font-size: 15px;
 }
 
@@ -902,7 +948,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* ---------------------------------------------------------- */
 
 .post-template .site-main, .page-template .site-main {
-    margin-top: 64px;
+    margin-top: 0px;
     padding-bottom: 4vw;
     background: #fff;
 }
@@ -2757,7 +2803,7 @@ Usage (In Ghost editor):
     font-size: 24px;
 }
 
-/* Copyright */
+/* Copyright 
 
 .copyright {
     font-size: 14px;
@@ -2772,7 +2818,7 @@ Usage (In Ghost editor):
     .site-footer-nav a:first-child {
         margin-left: 0;
     }
-}
+} */
 
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */
@@ -3030,7 +3076,6 @@ Usage (In Ghost editor):
     }
 }
 
-
 /* Embla starts */
 
 .embla {
@@ -3114,7 +3159,7 @@ Usage (In Ghost editor):
 /* Slide Custom */
 
 .post-card-primary-tag.slide {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     padding: 2px 10px;
     border-radius: 4px;
     font-weight: 400;
@@ -3215,3 +3260,309 @@ Usage (In Ghost editor):
 }
 
 /* Embla ends */
+
+.text-center {
+    text-align: center;
+}
+
+.author-post-count {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-decoration-color: white;
+    padding: .5rem;
+    border-radius: 0 1rem 1rem 0;
+    position: absolute;
+    margin-top: 1rem;
+}
+
+.post-card-tags {
+    display: block;
+    margin-bottom: 4px;
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.15em;
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.pull-left {
+    float: left;
+}
+
+/* category bar starts */
+
+.category-holder {
+    margin-bottom: 0rem;
+    overflow: hidden;
+    background: #15171a;
+    padding: 2rem 1rem 2rem;
+    color: #fff;
+    border-radius: 0 0 1.5rem 1.5rem;
+    font-size: 1.5rem;
+}
+
+.category-holder-fixed {
+    position: fixed;
+    z-index: 110;
+    top: 1;
+    margin: 0 auto;
+    width: 100%
+}
+
+.category-nav {
+    margin: 0;
+    padding: 0
+}
+
+.category-search {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 8px;
+    display: block;
+    cursor: pointer;
+    transition: all .5s ease-out;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: flex-end;
+    -ms-flex-pack: center;
+    justify-content: flex-end;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.category-title {
+    line-height: 20rem
+}
+
+.category-xs {
+    display: none
+}
+
+.search-btn {
+    border-left: 1px solid #ddd;
+    padding-left: 1rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.pull-left {
+    float: left
+}
+
+.pull-right {
+    float: right
+}
+
+.no-decoration, .no-decoration:hover {
+    text-decoration: none
+}
+
+@media(max-width:900px) {
+    .category-nav {
+        display: none
+    }
+    .category-xs {
+        display: -ms-flexbox;
+        display: flex
+    }
+    .filter-holder {
+        width: 100%;
+        margin: 1rem 0 0
+    }
+    .radio-container {
+        width: 33.3%
+    }
+}
+
+.outer-search {
+    position: relative;
+    padding: 0 4vw 0 4vw;
+}
+
+.navbar-cat {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.navbar-cat a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.inner-header {
+    margin: 0 auto;
+    max-width: 1268px;
+    width: 100%;
+}
+
+.reading-time {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-left: 20px;
+    color: #666;
+    font-size: 1.15rem;
+    line-height: 33px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+/* new footer */
+
+.iijtug {
+    width: 100%;
+    background-color: #1b1e21;
+    color: rgb(142, 142, 147);
+    padding: 30px 30px 0 30px;
+}
+
+.iijtug .container {
+    max-width: 1160px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.iijtug .leftSection {
+    width: 360px;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    flex-flow: column;
+}
+
+.iijtug .socialLinks {
+    margin-bottom: 20px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.iijtug .copyright {
+    font-size: 12px;
+}
+
+.iijtug .rightSection {
+    display: flex;
+}
+
+.iijtug .rightSection .links {
+    display: flex;
+}
+
+.iijtug .rightSection .linkSection {
+    display: flex;
+    margin-right: 84px;
+    flex-flow: column;
+}
+
+.iijtug .rightSection .linkSection a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: initial;
+    background: transparent;
+}
+
+.iijtug .rightSection .contact {
+    font-size: 12px;
+    line-height: 1.5;
+    width: 260px;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column;
+}
+
+.iijtug .leftSection p {
+    color: rgb(174, 174, 178);
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 20px 0px 20px;
+}
+
+.iijtug .leftSection p {
+    color: rgb(174, 174, 178);
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 20px 0px 40px;
+}
+
+@media (min-width: 1000px) {
+    .iijtug .socialLinks a {
+        margin-right: 40px;
+    }
+}
+
+.iijtug .socialLinks a {
+    margin-right: 15px;
+}
+
+.iijtug .rightSection .contact a, .iijtug .rightSection .contact h5 {
+    color: rgb(255, 255, 255);
+}
+
+.iijtug .rightSection .linkSection div {
+    display: inline-flex;
+    font-size: 12px;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+    margin: 0px 15px 5px;
+}
+
+@media (max-width: 800px) {
+    .iijtug .container {
+        flex-flow: column;
+    }
+}
+
+@media (max-width: 800px) {
+    .iijtug .leftSection {
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .iijtug .rightSection {
+        margin-top: 20px;
+        flex-flow: column;
+    }
+}
+
+@media (max-width: 800px) {
+    .iijtug .rightSection .linkSection:last-child {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 800px) {
+    .iijtug .rightSection .contact {
+        width: 100%;
+    }
+}
+
+.iijtug .copyright p {
+    line-height: 2.5;
+    margin-bottom: 0px;
+}
