@@ -127,11 +127,25 @@ body {
 .section-episode .episode--list {
 
 }
+
+.section-episode .episode--list__player {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.player {
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.player audio {
+    outline: none;
+}
+
 .section-episode .episode--list__item {
-    padding: 2rem 0;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
     display: flex; 
     flex-wrap: wrap;
-    border-bottom: 1px solid #e6e6e6;
 }
 
 @media (min-width: 768px) {
