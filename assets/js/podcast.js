@@ -7,6 +7,7 @@ $(document).ready(function(){
         success: function(result){
             $('#episode').html(``);
             var episodes = result.channel.item;
+
             episodes.forEach((episode,index) => {
                 $('#episode').append(`
                 <div class="episode--list__player">
