@@ -25,7 +25,7 @@ into the {body} of the default.hbs template --}}
                             </a>
                         </li>
                     </ul>
-                    <a class="search-btn no-decoration pull-right" href="#ghosteasybar">
+                    <a class="search-btn no-decoration pull-right" href="#searchinghost-easy">
                         <span style="color: white;">
                             <i class="fas fa-search fa-lg"></i>
                         </span>
@@ -97,48 +97,6 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-<script>
-    $(document).ready(function () {
-    $("#delCookie").click(function(){
-        del_cookie("cookie");   
-    });
-    
-    console.log(document.cookie);
-    var visit = getCookie("cookie");
-    if (visit == null) {
-        alert("Welcome to Android වැඩකාරයෝ website. By visiting this website it confirms that you are agreeing to our Terms of service. Thank you!");
-        var expire = new Date();
-        expire = new Date(expire.getTime() + 7776000000);
-        document.cookie = "cookie=here; expires=" + expire;
-    }
-});
-
-function del_cookie(name)
-{
-    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-}
-
-function getCookie(c_name) {
-    var c_value = document.cookie;
-    var c_start = c_value.indexOf(" " + c_name + "=");
-    if (c_start == -1) {
-        c_start = c_value.indexOf(c_name + "=");
-    }
-    if (c_start == -1) {
-        c_value = null;
-    } else {
-        c_start = c_value.indexOf("=", c_start) + 1;
-        var c_end = c_value.indexOf(";", c_start);
-        if (c_end == -1) {
-            c_end = c_value.length;
-        }
-        c_value = unescape(c_value.substring(c_start, c_end));
-    }
-    return c_value;
-}
-</script>
-
-
 <script>
 
     // NOTE: Scroll performance is poor in Safari

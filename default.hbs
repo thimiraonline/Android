@@ -65,8 +65,8 @@
                     <a href="https://open.spotify.com/show/3mLVk0itdRn2yZ3FFFmyok" style="color: #1DB954;">
                         <i class="fab fa-spotify fa-lg"></i>
                     </a>
-                    <a href="https://androidwedakarayo.com/rss" target="_blank"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <a href="https://androidwedakarayo.com/rss" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="20" height="20" viewBox="0 0 20 20">
                             <path fill="#ee802f" fill-rule="nonzero"
                                 d="M0 0h1.667C11.775 0 20 8.225 20 18.333V20h-3.333v-1.667c0-8.271-6.729-15-15-15H0V0zm0 6.667h1.667c6.431 0 11.666 5.235 11.666 11.666V20H10v-1.667C10 13.738 6.262 10 1.667 10H0V6.667zM2.5 15a2.5 2.5 0 0 1 0 5 2.5 2.5 0 0 1 0-5z">
                             </path>
@@ -75,7 +75,6 @@
                 <div class="copyright">
                     <p>Copyright © 2020 Android වැඩකාරයෝ - A Gavnyx Media Company. All Rights Reserved.
                     </p>
-                    <a href="//www.dmca.com/Protection/Status.aspx?ID=63e61e66-6871-4473-9b20-f76237385cf4" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-01.png?ID=63e61e66-6871-4473-9b20-f76237385cf4"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
                 </div>
             </div>
             <div class="rightSection">
@@ -97,6 +96,11 @@
                     <h5>Email us for general inquiries and copyright information</h5><a
                         href="mailto:contact@androidwedakarayo.com" target="_top">contact@androidwedakarayo.com</a>
                     <p></p>
+                    <a href="//www.dmca.com/Protection/Status.aspx?ID=63e61e66-6871-4473-9b20-f76237385cf4"
+                        title="DMCA.com Protection Status" class="dmca-badge"> <img
+                            src="https://images.dmca.com/Badges/_dmca_premi_badge_5.png?ID=63e61e66-6871-4473-9b20-f76237385cf4"
+                            alt="DMCA.com Protection Status" /></a>
+                    <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
                     <p></p>
                 </div>
             </div>
@@ -199,7 +203,12 @@
 
     <script>$(document).ready(function () { var nav = document.querySelector('.site-nav-main .site-nav'); var feed = document.querySelector('.posts'); var lastScrollY = window.scrollY; var lastWindowHeight = window.innerHeight; var lastDocumentHeight = $(document).height(); var ticking = false; function onScroll() { lastScrollY = window.scrollY; requestTick(); } function onResize() { lastWindowHeight = window.innerHeight; lastDocumentHeight = $(document).height(); requestTick(); } function requestTick() { if (!ticking) { requestAnimationFrame(update); } ticking = true; } function update() { var trigger = feed.getBoundingClientRect().top + window.scrollY; var progressMax = lastDocumentHeight - lastWindowHeight; if (lastScrollY >= trigger - 20) { nav.classList.add('fixed-nav-active'); } else { nav.classList.remove('fixed-nav-active'); } ticking = false; } window.addEventListener('scroll', onScroll, { passive: true }); window.addEventListener('resize', onResize, false); update(); const setupPrevNextBtns = (prevBtn, nextBtn, embla) => { prevBtn.addEventListener("click", embla.scrollPrev, false); nextBtn.addEventListener("click", embla.scrollNext, false); }; const disablePrevNextBtns = (prevBtn, nextBtn, embla) => { return () => { if (embla.canScrollPrev()) prevBtn.removeAttribute("disabled"); else prevBtn.setAttribute("disabled", "disabled"); if (embla.canScrollNext()) nextBtn.removeAttribute("disabled"); else nextBtn.setAttribute("disabled", "disabled"); }; }; const setupDotBtns = (dotsArray, embla) => { dotsArray.forEach((dotNode, i) => { dotNode.classList.add('embla__dot'); dotNode.addEventListener('click', () => embla.scrollTo(i), false); }); }; const generateDotBtns = (dots, embla) => { const scrollSnaps = embla.scrollSnapList(); const dotsFrag = document.createDocumentFragment(); const dotsArray = scrollSnaps.map(() => document.createElement('button')); dotsArray.forEach(dotNode => dotsFrag.appendChild(dotNode)); dots.appendChild(dotsFrag); return dotsArray; }; const selectDotBtn = (dotsArray, embla) => () => { const previous = embla.previousScrollSnap(); const selected = embla.selectedScrollSnap(); dotsArray[previous].classList.remove('is-selected'); dotsArray[selected].classList.add('is-selected'); }; const wrap = document.querySelector(".embla"); const viewPort = wrap.querySelector(".embla__viewport"); const prevBtn = wrap.querySelector(".embla__button--prev"); const nextBtn = wrap.querySelector(".embla__button--next"); const dots = wrap.querySelector(".embla__dots"); const radioButtons = document.querySelectorAll(".radio__input"); const radioButtonsArray = [].slice.call(radioButtons); const embla = EmblaCarousel(viewPort, { loop: true }); const dotsArray = generateDotBtns(dots, embla); const setSelectedDotBtn = selectDotBtn(dotsArray, embla); const disablePrevAndNextBtns = disablePrevNextBtns(prevBtn, nextBtn, embla); setupPrevNextBtns(prevBtn, nextBtn, embla); setupDotBtns(dotsArray, embla); embla.on("select", setSelectedDotBtn); embla.on("select", disablePrevAndNextBtns); embla.on("init", setSelectedDotBtn); embla.on("init", disablePrevAndNextBtns); });</script>
 
-    <script src="https://cdn.jsdelivr.net/gh/gmfmi/searchinghost-easy@1.0.0/dist/searchinghost-easy-backpack.js"></script>
+
+
+
+
+    <script
+        src="https://cdn.jsdelivr.net/gh/gmfmi/searchinghost-easy@1.0.0/dist/searchinghost-easy-backpack.js"></script>
     <script>
         new SearchinGhostEasy({
             contentApiKey: 'fdaf9fe0b5f7ca25d9a57d44b9',
@@ -210,22 +219,18 @@
                     o += '<section>'
                     if (post.tags.length > 0) {
                         o += `<header>
-                                <span class="head-tags">${post.tags[0].name}</span>
-                                <span class="head-date">${post.published_at}</span>
-                            </header>`
+                        <span class="head-tags">${post.tags[0].name}</span>
+                        <span class="head-date">${post.published_at}</span>
+                    </header>`
                     } else {
                         o += `<header>
-                                <span class="head-tags">UNKNOWN</span>
-                                <span class="head-date">${post.published_at}</span>
-                            </header>`
+                        <span class="head-tags">UNKNOWN</span>
+                        <span class="head-date">${post.published_at}</span>
+                    </header>`
                     }
                     o += `<h2>${post.title}</h2>`
                     o += `</section></a>`
                     return o;
-                },
-                indexOptions: {
-                    encode: false,
-                    split: /\s+/
                 }
             }
         });

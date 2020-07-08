@@ -25,7 +25,7 @@ into the {body} of the default.hbs template --}}
                             </a>
                         </li>
                     </ul>
-                    <a class="search-btn no-decoration pull-right" href="#ghosteasybar">
+                    <a class="search-btn no-decoration pull-right" href="#searchinghost-easy">
                         <span style="color: white;">
                             <i class="fas fa-search fa-lg"></i>
                         </span>
@@ -62,14 +62,16 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
+
+
 <main id="site-main" class="site-main outer">
+
+
+
     <div class="inner">
-
         <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
-
             <div class="post-top-area">
-
-                <div class="post-top-col">
+                <div class="post-top-col-left">
                     <div class="post-cst-title">
                         {{#if primary_tag}}
                         <section class="post-full-tags">
@@ -175,7 +177,7 @@ into the {body} of the default.hbs template --}}
                     </div>
                 </div>
 
-                <div class="post-top-col">
+                <div class="post-top-col-right">
                     <div class="post-cst-image">
                         {{#if feature_image}}
                         {{!-- <img srcset="{{img_url feature_image size="s"}} 300w,
@@ -184,7 +186,8 @@ into the {body} of the default.hbs template --}}
                                         {{img_url feature_image size="xl"}} 2000w" sizes="(max-width: 800px) 400px,
                                     (max-width: 1170px) 1170px,
                                         2000px" src="{{img_url feature_image size="xl"}}" alt="{{title}}" /> --}}
-                        <img src="https://ik.imagekit.io/androidwedakarayo{{img_url feature_image}}?tr=h-261.13,w-505" alt="{{title}}" />
+                        <img src="https://ik.imagekit.io/androidwedakarayo{{img_url feature_image}}?tr=h-351.62,w-680"
+                            alt="{{title}}" />
                         {{/if}}
                     </div>
                 </div>
